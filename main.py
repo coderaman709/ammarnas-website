@@ -40,7 +40,7 @@ def home():
     banner = random.choice(village)
     banner_min = random.choice(people)
 
-    return render_template("home.html", people=people, banner=banner, banner_min=banner_min, village=village)
+    return render_template("index.html", people=people, banner=banner, banner_min=banner_min, village=village)
 
 @app.route("/ammarnas/<string:image>", methods=['GET', 'POST'])
 def people(image):
