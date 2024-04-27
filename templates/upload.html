@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Ammarnas People</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" placeholder="Person Name" name="name" class="inp"><br>
+        <input type="text" placeholder="Born" name="born" class="inp"><br>
+        <input type="text" placeholder="Dead" name="dead" class="inp">
+        <h3>Select Image File</h3>
+        <h2 class="warn">Warning: make sure to upload image without brackets '()' & space ' ' in name</h2>
+        <input type="file" name="img">
+
+        <input type="submit" value="Post" class="btn">
+    </form>
+</body>
+</html>

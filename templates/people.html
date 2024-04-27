@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ person.name }}</title>
+</head>
+<body>
+    <img src="/static/online images/{{banner.image}}" height="auto" width="100%" class="top-img">
+    <div class="box-1">
+        <img src="/static/online images/{{person.image}}" height="auto" width="500px" class="people-img">
+        <h1 class="head">{{person.name}}</h1>
+        <p class="para">Born: {{person.born}}</p>
+        <p class="para">Dead: {{person.dead}}</p>
+    </div>
+</body>
+</html>

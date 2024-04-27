@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammarnas</title>
+</head>
+<style>
+    body{
+        background-color: rgb(50, 50, 50);
+    }
+</style>
+<body>
+    <nav>
+        <ul><li>Upload</li>
+            <a href="/upload-village"><li>Village</li></a>
+            <a href="/upload"><li>People</li></a>
+        </ul>
+        <a href="/village"><li>Village</li></a>
+        <a href="/people"><li>People</li></a>
+        <a href="/ "><li>Home</li></a>
+    </nav>
+
+    <div class="banner">
+        <img src="/static/online images/{{banner.image}}">
+        <h1>{{ banner.title }}</h1>
+    </div>
+    <h2 class="head-1">Ammarnas, Sewden</h2>
+    <p class="para-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut cumque laborum similique
+     aliquid? Repellat enim fugit est dolor maiores, dolore dolorum possimus nobis excepturi, 
+     eaque saepe nihil tempore! Dolor eligendi itaque reiciendis optio libero nesciunt deserunt 
+     autem corporis error est omnis commodi inventore, ab, atque fugiat quam quos accusantium 
+     id maiores nostrum facere consequuntur alias beatae similique. Sed, labore quos. Nihil illum 
+     perferendis voluptatem culpa, debitis rerum accusamus ullam incidunt dicta saepe sequi ex 
+     quia aliquid deserunt doloribus quo possimus molestiae odio nisi sint. Odit aliquid laudantium 
+     cum voluptate quia cupiditate sint tenetur vitae recusandae exercitationem, accusantium tempore 
+     rem provident magnam fugit dignissimos saepe ullam iusto maiores expedita possimus autem
+      assumenda? Inventore dignissimos, ipsum impedit magnam aut molestias omnis doloribus repudiandae 
+      dicta labore incidunt itaque molestiae nostrum eum a voluptatem!</p>
+    <div class="side">
+        <img src="/static/online images/{{banner_min.image}}">
+        <h3>{{ banner_min.name }}</h3>
+        <p>Born: {{ banner_min.born }}</p>
+        <p>Dead: {{ banner_min.dead }}</p>
+    </div>
+
+    <div class="group-1">
+
+        <h2 class="head-2">Ammarnas's People</h2>
+
+    {% for person in people %}
+
+        <a href="/ammarnas/{{person.image}}">
+            <div>
+                <img src="/static/online images/{{person.image}}">
+                <h3>{{ person.name }}</h3><br>
+                <p>Born: {{ person.born }}</p><br>
+                <p>Dead: {{ person.dead }}</p>
+        </div></a>
+
+    {% endfor %}
+    </div>
+
+    <div class="group-2">
+
+        <h2 class="head-2">Ammarnas Village</h2>
+
+    {% for village in village %}
+
+        <a href="/ammarnas/village/{{village.image}}">
+            <div>
+                <img src="/static/online images/{{village.image}}">
+                <h3>{{ village.title }}</h3>
+        </div></a>
+
+    {% endfor %}
+    </div>
+
+    <footer class="footer">
+        {% for village in village %}
+                <img src="/static/online images/{{village.image}}">
+        {% endfor %}
+        {% for person in people %}
+                <img src="/static/online images/{{person.image}}">
+        {% endfor %}
+    </footer>
+
+</body>
+</html>

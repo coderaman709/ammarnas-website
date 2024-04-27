@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persons Who Lived in Ammarnas</title>
+</head>
+<body>
+    <h1 class="head-3">People Who Lived In Ammarnas</h1>
+    {% for person in person %}
+
+    <a href="/ammarnas/{{person.image}}">
+        <div class="people">
+            <img src="/static/online images/{{person.image}}">
+            <h3>{{ person.name }}</h3><br>
+            <p>Born: {{ person.born }}</p><br>
+            <p>Dead: {{ person.dead }}</p>
+    </div></a>
+
+    {% endfor %}
+</body>
+</html>
